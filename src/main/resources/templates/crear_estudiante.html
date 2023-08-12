@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Registro de estudiantes</title>
+<!-- CSS only -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" href="#"> Control de estudiantes</a>
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/estudiantes}">Estudiantes</a></li>
+			</ul>
+		</div>
+	</nav>
+
+    <br>
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                  <h1 class="text-center">Registro de un estudiante</h1>
+                  <div class="card-body">
+                     <form class="needs-validation" th:action="@{/estudiantes}" th:object="${estudiante}" method="POST">
+                        <div class="form-group">
+                           <label for="validationCustom01" >Nombre : </label>
+                           <input type="text"  id="validationCustom01" name="nombre" th:field="*{nombre}" class="form-control" placeholder="Nombre del estudiante: " required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                           <label for="validationCustom02">Apellido : </label>
+                           <input type="text" id="validationCustom02" name="apellido" th:field="*{apellido}" class="form-control" placeholder="Apellido del estudiante: " required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                           <label for="validationCustom03">Email : </label>
+                           <input type="email" id="validationCustom03" name="email" th:field="*{email}" class="form-control" placeholder="Email del estudiante: " required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+
+                        <div class="box-footer">
+                           <button class="btn btn-success">Guardar Datos</button>
+                        </div>
+                     </form>
+                  </div>
+              </div>
+           </div>
+        </div>
+    <script type="text/javascript" src="js/students.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
